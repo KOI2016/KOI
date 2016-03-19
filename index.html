@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Reservas</title>
+
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:768px) and (max-width:980px)" href="css/base_768.css">
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:600px) and (max-width:767px)" href="css/base_600.css">
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:300px) and (max-width:599px)" href="css/base_300.css">
+<link rel="stylesheet" href="css/animate.css">
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<script src="js/codigo.js"></script>
+</head>
+
+
+<body >
+
+<div id="cabecalho">
+<img src="img/fundo_cabecalho.jpg" width=100% height=230px>
+</div>
+	<div id="menu">
+		<ul>
+			<li><a href="index.html" style="color:orange"> Reservas </a></li>
+			<li><a href="sobre.html" > Sobre-Nós </a></li>
+			<li><a href="servicos.html" > Serviços </a></li>
+			<li><a href="contactos.html" > Contactos </a></li>
+		</ul>
+	</div>
+
+
+
+	<br>
+	<div id="logo">
+		<img  src="img/Logo-HKiame.png"
+			height=200 width=600>
+	</div>
+
+<div id="conteudo" class="animated fadeInLeft">
+<div id="info">
+			
+			
+
+		
+			
+			
+			<form name="dados" id="dados" action="guarda_dados.php"
+				onSubmit="return validarFormulario();return false" method="POST">
+				
+				
+				<div id="dadosPessoais">
+				<h1 style="text-align: center; ">Dados Pessoais:</h1>
+				<hr style="margin-top:-15px">
+				<br>
+
+				<div class="centroReserva">
+					Primeiro nome:<br> <input type="text" name="firstname">
+					
+					<script>var idade=18;
+					for (var i = 19; i <= 100; i++) {
+						idade = idade + '<option value='+i+' >'
+								+ i + '</option>';
+					}
+					</script>
+					
+					<div Style="margin-left: 300px; margin-top: -37px">
+						Idade: <br> <select id="idade" name="age">
+							<option value="" selected>--</option>
+							<option value="<script>document.write(idade);</script>">
+						
+								<script>
+									document.write(idade);
+								</script>
+								
+								</option>
+						</select>
+					</div>
+					
+					
+					
+                    <br>
+					<br> Ultimo nome:<br> <input type="text" name="lastname">
+					<div style="margin-left: 300px; margin-top: -37px">
+						T&#237;tulo: <br> <select name="titulo">
+							<option value="Sr.">Sr.</option>
+							<option value="Sra.">Sra.</Option>
+							<option value="Dr.">Dr.</option>
+							<option value="Dra.">Dra.</Option>
+							<option value="Eng.">Eng.</option>
+							<option value="Arq.">Arq.</Option>
+						</select>
+					</div>
+					<br> <br>
+					
+					
+					
+					<div style="margin-left: 500px; margin-top: -55px">
+						Sexo: <br> <input type="radio" name="sex" value="M" checked>Masculino
+						<br> <input type="radio" name="sex" value="F">Feminino
+					</div>
+					
+					
+					<div style="margin-top: 0px; margin-left:0px;">
+						E-mail:<br /> <input type="email" name="email"
+							placeholder="exemplo@HKiame.ao" />
+					</div>
+					
+					
+					<div style="margin-top: -35px; margin-left: 300px">
+						Contacto:<br /> <input type="text" name="contacto"
+							placeholder="9xxxxxxxx" />
+					</div>
+					
+					
+					<div style="margin-top: 10px;">
+						Documento tipo:<br /> <select id="idtipo" name="idtipo">
+							<option value="passaporte">Passaporte</option>
+							<option value="B.I.">B.I.</option>
+							<option value="carta_de_condução">Carta de condução</option>
+						</select>
+					</div>
+
+
+					<div style="margin-top: -33px; margin-left: 300px">
+						Nº Documento:<br /> <input type="text" name="id">
+					</div>
+					
+					
+				</div>
+				<br> <br>
+
+				<hr>
+				<br> <br> <br> <br>
+</div>
+ <div id="dadosReserva">
+				<h2 style="text-align: center">Dados da reserva:</h2>
+				<hr>
+				<div class="centroReserva">
+					<br /> Estabelecimento: <select style="margin-left: 50px"
+						id="estabelecimento" onChange="escolha1();">
+						<option>-- Escolha --</option>
+						<option>HKiame U&#237;ge</option>
+						<option>HKiame Hu&#237;la</option>
+
+					</select> <br> <br> <div id="maisQuarto" style="display:inline">Tipo de quarto:
+
+					<v> <input style="margin-left: 50px" type="radio" id="room1"
+						name="room" value="Normal"
+						onClick="document.getElementById('valor').innerHTML = 100+' USD'; document.getElementById('q').innerHTML = ' Normal';getRadioVal(dados, 'room')">Normal<im>
+					<img
+						src="img/CMBS-Hotel-Loans-Financing-for-Senior-Debt-from-PGiCapital.org_.jpg"
+						width="170px" height="110px"></im></v>
+					<v> <input style="margin-left: 50px" type="radio" id="room2"
+						name="room" value="Suite"
+						onClick="document.getElementById('valor').innerHTML = 200+' USD';document.getElementById('q').innerHTML = ' Suite';getRadioVal(dados, 'room')">Suite<im>
+					<img src="img/hotel.jpg" width="170px" height="110px"></im> </v>
+					<v> <input style="margin-left: 50px" type="radio" id="room3"
+						name="room" value="Casal"
+						onClick="document.getElementById('valor').innerHTML = 300+' USD';document.getElementById('q').innerHTML = ' Casal';getRadioVal(dados, 'room')">Casal<im>
+					<img
+						src="img/CMBS-Hotel-Loans-Financing-for-Senior-Debt-from-PGiCapital.org_.jpg"
+						width="170px" height="110px"></im></v>
+					</div> <br> <br> Numero de quartos: <select
+						id="nq" name="nq" style="margin-left: 50px"
+						onChange="escolha2();quartos()">
+						<option>-- Escolha --</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>+3</option>
+					</select>
+					<div id="mais1Quarto">
+						<br> Escolha o segundo tipo de quarto:
+
+						<v> <input style="margin-left: 50px" type="radio" id="room4"
+							name="room2" value="Normal"
+							onClick="document.getElementById('valor2').innerHTML = '+'+100+' USD'; document.getElementById('q2').innerHTML = ' Normal';getRadioVal(dados, 'room2')">Normal<im>
+						<img
+							src="img/CMBS-Hotel-Loans-Financing-for-Senior-Debt-from-PGiCapital.org_.jpg"
+							width="170px" height="110px"></im></v>
+						<v> <input style="margin-left: 50px" type="radio" id="room5"
+							name="room2" value="Suite"
+							onClick="document.getElementById('valor2').innerHTML = '+'+200+' USD';document.getElementById('q2').innerHTML = ' Suite';getRadioVal(dados, 'room2')">Suite<im>
+						<img src="img/hotel.jpg" width="170px" height="110px"></im> </v>
+						<v> <input style="margin-left: 50px" type="radio" id="room6"
+							name="room2" value="Casal"
+							onClick="document.getElementById('valor2').innerHTML = '+'+300+' USD';document.getElementById('q2').innerHTML = ' Casal';getRadioVal(dados, 'room2')">Casal<im>
+						<img
+							src="img/CMBS-Hotel-Loans-Financing-for-Senior-Debt-from-PGiCapital.org_.jpg"
+							width="170px" height="110px"></im></v>
+
+
+						<div id="mais2Quarto">
+							<br> Escolha o terceiro tipo de quarto:
+
+							<v> <input style="margin-left: 50px" type="radio" id="room7"
+								name="room3" value="Normal"
+								onClick="document.getElementById('valor3').innerHTML = '+'+100+' USD'; document.getElementById('q3').innerHTML = ' Normal';getRadioVal(dados, 'room3')">Normal<im>
+							<img
+								src="img/CMBS-Hotel-Loans-Financing-for-Senior-Debt-from-PGiCapital.org_.jpg"
+								width="170px" height="110px"></im></v>
+							<v> <input style="margin-left: 50px" type="radio" id="room8"
+								name="room3" value="Suite"
+								onClick="document.getElementById('valor3').innerHTML = '+'+200+' USD';document.getElementById('q3').innerHTML = ' Suite';getRadioVal(dados, 'room3')">Suite<im>
+							<img src="img/hotel.jpg" width="170px" height="110px"></im> </v>
+							<v> <input style="margin-left: 50px" type="radio" id="room9"
+								name="room3" value="Casal"
+								onClick="document.getElementById('valor3').innerHTML = '+'+300+' USD';document.getElementById('q3').innerHTML = ' Casal';getRadioVal(dados, 'room3')">Casal<im>
+							<img
+								src="img/CMBS-Hotel-Loans-Financing-for-Senior-Debt-from-PGiCapital.org_.jpg"
+								width="170px" height="110px"></im></v>
+						</div>
+
+
+					</div>
+
+
+					<br> <br> Data de ida:<input type="text" name="theDate1"
+						id="theDate1" /><span style="margin-left: 30px"></span> Data de
+					volta: <input type="text" name="theDate2" id="theDate2" />
+
+				</div>
+				<br>
+				<hr>
+
+                 </div>
+				
+
+				
+				
+
+				<div class="centroReserva">
+					<bover> <span style="cursor: help"> <img
+						src="img/help.png"
+						style="margin-bottom: 5px; height: 20px; width: 50px"></span> </bover>
+
+					<bover> <input type="image" name="submeteu"
+						src="img/bpagamento.png" alt="Submit Form"
+						style="margin-left: 200px; height: 30px; width: 100px" /> </bover>
+				</div>
+			</form>
+			<br> 
+</div>
+</div>
+</body>
+
+
+</html>

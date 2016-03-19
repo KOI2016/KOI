@@ -1,0 +1,124 @@
+@CHARSET "UTF-8";
+@font-face {
+	font-family: Raleway;
+	src: url(../fonts/Raleway-Medium.ttf);
+}
+@font-face {
+	font-family: Mont;
+	src: url(../fonts/Montserrat-Regular.ttf);
+}
+body{
+
+	background-image: url(../img/fundo_HKiame.jpg);
+	background-size:100% 100%;
+	 background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: 0 200px;
+}
+#cabecalho{
+	position:relative;
+	top:-30px;
+	width:103%;
+	margin-left:-10px;
+	
+}
+#logo{
+	position:relative;
+    top:-80px;
+    left: 180px;
+    width:200px;
+    height:300px;
+    margin-top: -200px; /*set to a negative number 1/2 of your height*/
+    margin-left: -300px; /*set to a negative number 1/2 of your width*/
+  
+}
+#menu {
+	
+	text-align:center;
+	width:100%;
+	height:34px;
+	position:relative;
+    top:-50px;
+	margin:-8px;
+   
+
+}
+#menu ul{
+	width:100%;
+	text-align:center;
+	list-style: none;
+	background-color:black;
+	z-index:100;
+}
+
+#menu ul li{
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:25px;
+	padding-right:25px;
+	border:1px;
+	border-color:brown;
+    display: inline-block;
+    transition:all 1s;
+     
+}
+#menu ul li:hover{
+	
+		border:2px solid brown;
+	
+}
+#menu ul li:hover a{
+	color:orange;
+}
+#menu a{
+	font-family:Mont;
+	color:brown;
+	text-decoration:none;
+}
+#conteudo{
+width:1000px;
+	margin: 0px auto;
+	align:center;
+}
+#info{
+	font-size:10px;
+	font-family: Raleway;
+	position:relative;
+	top:-120px;
+	left:210px;
+	padding:20px;
+	border: 1px solid black;
+	width:600px;
+	background-color: rgba(255,255,255,0.7);
+	transition:all .5s;
+	
+}
+#info:hover{
+	background-color: rgba(255,255,255,1);
+	
+}
+#infoBlack{
+	position:relative;
+	top:-100px;
+	padding:50px;
+	color:white;
+	background-color: rgba(0,0,0,0.2);
+	
+}
+#infoBlack:hover{
+	background-color: rgba(0,0,0,0.5);
+}
+#relogio{
+	display:none;
+	position:relative;
+	top:-400px;
+	left:150px;
+	
+}
+#dadosPessoais{
+	
+}
+
+#dadosReserva{
+	display:none;
+}
